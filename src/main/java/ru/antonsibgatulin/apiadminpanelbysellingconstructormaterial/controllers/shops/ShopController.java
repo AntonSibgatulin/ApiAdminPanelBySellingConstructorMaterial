@@ -29,4 +29,12 @@ public class ShopController {
     public ResponseEntity createShop(@Valid @RequestBody ShopDTO shopDTO){
         return shopService.createShop(shopDTO);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity delete(@PathVariable("id") Long id){
+        return shopService.delete(id);
+
+    }
+
+
 }

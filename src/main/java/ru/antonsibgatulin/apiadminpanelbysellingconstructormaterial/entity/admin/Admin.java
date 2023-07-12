@@ -12,7 +12,6 @@ import java.util.Collection;
 import java.util.List;
 
 @NoArgsConstructor
-@RequiredArgsConstructor
 @Data
 @Entity
 public class Admin implements UserDetails {

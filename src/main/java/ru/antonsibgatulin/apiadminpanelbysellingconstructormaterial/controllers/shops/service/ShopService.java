@@ -9,6 +9,7 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.controllers.
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.controllers.shops.respone.ShopGetUnSeccessRespone;
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.dto.ShopDTO;
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.admin.Admin;
+import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.admin.Role;
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.shop.Shop;
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.repository.ShopRepository;
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.utils.DtoConverter;
@@ -54,7 +55,8 @@ public record ShopService(ShopRepository shopRepository, ModelMapper modelMapper
     public ResponseEntity delete(Long id) {
         var admin = getAdmin();
         var shop = shopRepository.getReferenceById(id);
-        if(shop!=null && shop.getAdmin().getId() == admin.getId()){
+        if(shop!=null && (shop.getAdmin().getId() == admin.getId() || admin.getRole() == Role.ADMIN)){
+            shopRepository.delete(shop);
             return ResponseEntity.ok(new DeleteResponseOK());
         }else{
             return ResponseEntity.ok(new DeleteResponseError());

@@ -15,26 +15,25 @@ public class ShopController {
 
     private final ShopService shopService;
 
-
     @GetMapping("/getMyShops")
-    public ResponseEntity getMyShops(){
-        return  shopService.getMyShops();
+    public ResponseEntity getMyShops() {
+        return shopService.getMyShops();
     }
+
     @GetMapping("/getShopById/{id}")
-    public ResponseEntity getShopById(@PathVariable("id") Long id){
+    public ResponseEntity getShopById(@PathVariable("id") Long id) {
         return shopService.getShopById(id);
     }
 
     @PutMapping("/createShop")
-    public ResponseEntity createShop(@Valid @RequestBody ShopDTO shopDTO){
+    public ResponseEntity createShop(@Valid @RequestBody ShopDTO shopDTO) {
         return shopService.createShop(shopDTO);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity delete(@PathVariable("id") Long id){
+    public ResponseEntity delete(@PathVariable("id") Long id) {
         return shopService.delete(id);
 
     }
-
 
 }

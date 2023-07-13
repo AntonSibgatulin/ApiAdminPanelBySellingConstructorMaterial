@@ -4,7 +4,8 @@ public class LoginSuccessRespone {
     public String message = "AUTH_TRUE";
     public Integer code = 200;
     public Object object;
-    public <T> LoginSuccessRespone(T t){
+
+    public <T> LoginSuccessRespone(T t) {
         this.object = t;
     }
 }

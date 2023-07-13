@@ -6,6 +6,6 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.shop.
 
 import java.util.List;
 
-public interface ShopRepository extends JpaRepository<Shop,Long> {
+public interface ShopRepository extends JpaRepository<Shop, Long> {
     List<Shop> findAllByAdmin(Admin admin);
 }

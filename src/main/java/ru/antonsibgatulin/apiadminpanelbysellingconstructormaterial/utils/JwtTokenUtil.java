@@ -13,6 +13,7 @@ import java.util.Map;
 
 @Component
 public class JwtTokenUtil {
+
     private static final String SECRET_KEY = "77397A24432646294A404E635166546A576E5A7234753778214125442A472D4B";
     private static final Long EXPIRATION_TIME = 86400000L * 365L;
 
@@ -39,10 +40,8 @@ public class JwtTokenUtil {
         return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody().getSubject();
     }
 
-    public Date getExpirationDateFromToken(String token){
+    public Date getExpirationDateFromToken(String token) {
         return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody().getExpiration();
     }
-
-
 
 }

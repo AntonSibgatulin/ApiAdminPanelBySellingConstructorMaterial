@@ -5,10 +5,11 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.admin
 
 public class ObjectUtils {
 
-    public static Admin getAdmin(){
-        Admin admin = (Admin) SecurityContextHolder.getContext().getAuthentication()
+    public static Admin getAdmin() {
+        Admin admin = (Admin) SecurityContextHolder
+                .getContext()
+                .getAuthentication()
                 .getPrincipal();
-
         return admin;
     }
 

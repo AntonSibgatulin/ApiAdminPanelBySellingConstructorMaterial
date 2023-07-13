@@ -5,6 +5,7 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.coord
 import java.util.List;
 
 public class ShopDTO {
+
     public List<Coordinates> coordinatesList;
     public String name;
     public String description;

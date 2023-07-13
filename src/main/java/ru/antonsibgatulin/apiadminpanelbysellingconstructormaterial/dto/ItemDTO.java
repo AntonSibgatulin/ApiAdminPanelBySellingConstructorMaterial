@@ -11,6 +11,7 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.shop.
 @Data
 public class ItemDTO {
 
+    private Long id;
     @IgnoreMapping
     private Long shopId;
     private String name;

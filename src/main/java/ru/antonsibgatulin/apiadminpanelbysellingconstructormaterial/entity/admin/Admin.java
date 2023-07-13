@@ -20,9 +20,6 @@ public class Admin implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
-
-    @Enumerated(EnumType.STRING)
-    private AdminType adminType;
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -57,4 +54,5 @@ public class Admin implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

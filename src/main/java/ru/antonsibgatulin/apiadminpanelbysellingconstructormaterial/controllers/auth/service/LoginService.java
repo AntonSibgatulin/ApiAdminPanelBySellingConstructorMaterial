@@ -15,7 +15,6 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.utils.JwtTok
 public record LoginService(TokenAdminRepository tokenAdminRepository, AdminRepository adminRepository,
                            JwtTokenUtil jwtTokenUtil) {
 
-
     public ResponseEntity login(LoginRequest loginRequest) {
         var admin = adminRepository.getAdminByEmailAndPassword(loginRequest.email, loginRequest.password);
         if (admin != null) {
@@ -27,9 +26,8 @@ public record LoginService(TokenAdminRepository tokenAdminRepository, AdminRepos
     }
 
 
-
-
     public String generateToken(Admin admin) {
         return jwtTokenUtil.generateToken(admin);
     }
+
 }

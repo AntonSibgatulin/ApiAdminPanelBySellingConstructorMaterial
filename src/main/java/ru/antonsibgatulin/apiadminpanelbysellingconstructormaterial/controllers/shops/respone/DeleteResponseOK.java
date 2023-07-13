@@ -2,6 +2,6 @@ package ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.controllers
 
 public class DeleteResponseOK {
 
-    public String message="OK";
+    public String message = "OK";
     public Integer code = 200;
 }

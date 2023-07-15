@@ -11,7 +11,7 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.controllers.
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.dto.AdminDTO;
 
 @RequiredArgsConstructor
-@RequestMapping("/reg")
+@RequestMapping("api/reg")
 @RestController
 public class RegController {
 

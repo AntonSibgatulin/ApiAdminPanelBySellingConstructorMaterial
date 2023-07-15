@@ -9,7 +9,7 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.controllers.
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.dto.ItemDTO;
 
 @RequiredArgsConstructor
-@RequestMapping("/items")
+@RequestMapping("api/items")
 @RestController
 public class ItemsController {
 

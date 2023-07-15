@@ -1,6 +1,7 @@
 package ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.controllers.reg.service;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.controllers.reg.response.EmailAlreadyCreatedResponse;
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.controllers.reg.response.InvalidDataResponse;
 
@@ -13,6 +14,7 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.repository.A
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.repository.TokenAdminRepository;
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.utils.DtoConverter;
 
+@Service
 public record RegService(AdminRepository adminRepository, TokenAdminRepository tokenAdminRepository,
                          DtoConverter dtoConverter) {
 

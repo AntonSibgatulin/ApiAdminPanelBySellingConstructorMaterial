@@ -1,5 +1,6 @@
 package ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.token;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,7 @@ public class TokenAdmin {
     private Long id;
     private String token;
 
+    @JsonIgnore
     @OneToOne
     private Admin admin;
 

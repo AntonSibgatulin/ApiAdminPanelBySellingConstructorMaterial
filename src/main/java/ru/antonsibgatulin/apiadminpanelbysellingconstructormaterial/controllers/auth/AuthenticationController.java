@@ -13,13 +13,17 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.utils.JwtTok
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/auth")
+@RequestMapping("api/auth")
 public class AuthenticationController {
 
     private final LoginService loginService;
 
     @GetMapping("/login")
-    public ResponseEntity login(@Valid @RequestParam LoginRequest loginRequest) {
+    public ResponseEntity login(@RequestParam("email")String email,@RequestParam("password") String password) {
+        var loginRequest = new LoginRequest();
+        loginRequest.email = email;
+        loginRequest.password = password;
+
         return loginService.login(loginRequest);
     }
 

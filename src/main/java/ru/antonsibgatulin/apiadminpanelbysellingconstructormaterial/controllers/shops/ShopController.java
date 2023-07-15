@@ -10,7 +10,7 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.dto.ShopDTO;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/shops")
+@RequestMapping("api/shops")
 public class ShopController {
 
     private final ShopService shopService;

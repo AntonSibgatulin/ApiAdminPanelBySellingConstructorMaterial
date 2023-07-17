@@ -3,7 +3,6 @@ package ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.item
 
 import jakarta.persistence.*;
 import lombok.Data;
-import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.item.category.Category;
 import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.shop.Shop;
 
 @Data
@@ -14,7 +13,7 @@ public class ShopItems {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     private Shop shopId;
     private String name;
     private Integer price;
@@ -24,6 +23,7 @@ public class ShopItems {
     private Integer discount_percent;
     private Integer discount_price;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
 }

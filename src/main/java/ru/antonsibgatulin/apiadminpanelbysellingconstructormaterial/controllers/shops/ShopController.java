@@ -36,4 +36,10 @@ public class ShopController {
 
     }
 
+    @PostMapping("/edit/{id}")
+    public ResponseEntity editShop(@Valid @RequestBody ShopDTO shopDTO,@PathVariable("id") Long id){
+        return shopService.editShop(shopDTO,id);
+
+    }
+
 }

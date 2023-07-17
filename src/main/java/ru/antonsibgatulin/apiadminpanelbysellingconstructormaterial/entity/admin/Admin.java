@@ -15,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(name = "admins")
 public class Admin implements UserDetails {
 
     @Id

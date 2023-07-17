@@ -1,0 +1,1 @@
+INSERT INTO admin (id,email,password,role) VALUE (NULL,"8987920@mail.ru","Dert869$$","ADMIN");

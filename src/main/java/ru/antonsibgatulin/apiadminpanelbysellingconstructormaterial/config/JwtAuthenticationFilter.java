@@ -43,6 +43,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         try {
+            System.out.println(token);
             userPhone = jwtService.getEmailFromToken(token);
         }catch(Exception e){
             e.printStackTrace();

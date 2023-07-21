@@ -37,7 +37,13 @@ public record ItemsService(ItemRepository itemRepository, DtoConverter dtoConver
     private ResponseEntity getResponseEntity(ItemDTO itemDTO) {
         var admin = getAdmin();
         var item = dtoConverter.convertToEntity(itemDTO, ShopItems.class);
+        if (itemDTO.getShopId() == -1L) return ResponseEntity.ok(new ItemUnSuccessRespone());
         var shop = shopRepository.getReferenceById(itemDTO.getShopId());
+
+        if (shop == null) {
+            return ResponseEntity.ok(new ItemUnSuccessRespone());
+        }
+
         if (shop.getAdmin().getId() == admin.getId()) {
             item.setShopId(shop);
             itemRepository.save(item);
@@ -63,7 +69,7 @@ public record ItemsService(ItemRepository itemRepository, DtoConverter dtoConver
         var shop = shopRepository.getReferenceById(id);
         if (shop.getAdmin().getId() == admin.getId()) {
             var list = itemRepository.findAllByShopId(shop);
-            return ResponseEntity.ok(new ItemSuccessRespone());
+            return ResponseEntity.ok(list);
         } else
             return ResponseEntity.ok(new ItemUnSuccessRespone());
     }

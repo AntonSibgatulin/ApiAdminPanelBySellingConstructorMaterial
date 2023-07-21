@@ -9,7 +9,7 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.annotation.I
 public class ItemDTO {
 
     //private Long id;
-    @IgnoreMapping
+    //@IgnoreMapping
     private Long shopId;
     private String name;
     private Integer price;

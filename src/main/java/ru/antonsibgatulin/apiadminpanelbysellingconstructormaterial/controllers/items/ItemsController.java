@@ -15,7 +15,7 @@ public class ItemsController {
 
     private final ItemsService itemsService;
 
-    @PutMapping("/create")
+    @PostMapping("/create")
     public ResponseEntity create(@Valid @RequestBody ItemDTO itemDTO){
         return itemsService.create(itemDTO);
     }

@@ -23,6 +23,11 @@ public class ShopItems {
     private Integer discount_percent;
     private Integer discount_price;
 
+    private Long timeCreate;
+    private Long lastUpdate;
+    private Integer profit;
+    private Integer expenses; //затраты
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;

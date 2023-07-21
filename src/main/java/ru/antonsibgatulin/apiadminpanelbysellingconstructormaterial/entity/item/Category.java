@@ -12,6 +12,7 @@ import ru.antonsibgatulin.apiadminpanelbysellingconstructormaterial.entity.shop.
 @Entity
 public class Category {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +22,7 @@ public class Category {
     @ManyToOne
     private Admin admin;
 
+    @JsonIgnore
     @ManyToOne
     private Shop shop;
 }
